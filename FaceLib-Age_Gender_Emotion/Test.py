@@ -15,7 +15,8 @@ def load_images_from_folder(folder):
         if img is not None:
             images.append(img)
     return images
-folder = "/home/user/Desktop/face-biometric-server/data/face_male"
+folder = "/home/user/Desktop/face-biometric-server/data/face_female/3"
+#folder = "/home/user/Downloads/rashionalrose"
 #img = cv2.imread(os.path.join(folder,"Google_0413.jpeg"))
 images = load_images_from_folder(folder)
 aa =len(images)
