@@ -4,6 +4,7 @@ import numpy as np
 from facelib.utils import download_weight
 from .models.densenet import densenet121
 from .models.resnet import resnet34
+from torchsummary import summary
 
 labels = np.array(['angry', 'disgust', 'fear', 'happy', 'sad', 'surprise', 'neutral'])
 
@@ -31,7 +32,7 @@ class EmotionDetector:
             self.model = densenet121()
         else:
             exit('from EmotionDetector: Network does not support!! \n just(resnet34, densnet121)')
-
+        # print(summary(self.model, input_size=(3, 224, 224)))
         # download the default weigth
         if weight_path is None:
             file_name = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'densnet121.pth')
